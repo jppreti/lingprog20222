@@ -95,12 +95,44 @@ scanf("%f",&quadrado);
 printf("Seu quadrado é %2.2f\n", pow(quadrado,2.0));
 
 //13. Faça um programa em C que leia o saldo de uma conta poupança e imprima o novo saldo, considerando um reajuste de 2%.
+float saldo = 0.0;
+printf("Digite o saldo: R$ ");
+scanf("%f",&saldo);
+printf("Saldo com reajuste de 2%%: R$ %2.2f\n", saldo*1.02);
 
 //14. Faça um programa em C que leia a base e a altura de um retângulo e imprima o perímetro (base + altura) e a área (base * altura).
+int base = 0, altura = 0;
+printf("Digite a base do retângulo: ");
+scanf("%d",&base);
+printf("Digite a altura do retângulo: ");
+scanf("%d",&altura);
+printf("Perímetro: %d\n", base+altura);
+printf("Área: %d\n", base*altura);
+
 //15. Faça um programa em C que leia o valor de um produto, o percentual do desconto desejado e imprima o valor do desconto e o valor do produto subtraindo o desconto.
+float valor = 0.0, desconto = 0.0;
+printf("Digite o valor do produto: R$ ");
+scanf("%f",&valor);
+printf("Digite o percentual do desconto: ");
+scanf("%f",&desconto);
+printf("Valor do desconto: R$ %2.2f\n",valor*desconto/100);
+printf("Valor final do produto: R$ %2.2f\n",valor*(1-desconto/100));
+
 //16. Faça um programa em C que calcule o reajuste do salário de um funcionário. Para isso, o programa deverá ler o salário atual do funcionário e ler o percentual de reajuste. Ao final imprimir o valor do novo salário.
+float salario = 0.0, reajuste = 0.0;
+printf("Digite o valor do salário: R$ ");
+scanf("%f",&salario);
+printf("Digite o percentual do reajuste: ");
+scanf("%f",&reajuste);
+printf("Valor do salário reajustado: R$ %2.2f\n",salario*(1+reajuste/100));
+
 //17. Faça um programa em C que calcule a conversão entre graus centígrados e Fahrenheit. Para isso, leia o valor em centígrados e calcule com base na fórmula a seguir. Após calcular o programa deve imprimir o resultado da conversão.
 //F = (9 x C +160) / 5
+float celsius = 0.0;
+printf("Digite a temperatura em celsius: ");
+scanf("%f",&celsius);
+printf("Farenheit: %2.1f\n", (9*celsius+160)/5);
+
 //18. Faça umprograma em C que calcule a quantidade de litros de combustível consumidos em uma viagem, sabendo-se que o carro tem autonomia de 12 km por litro de combustível. O programa deverá ler o tempo decorrido na viagem e a velocidade média e aplicar as fórmulas:
 //D = T x V       L = D / 12
 //Em que:
@@ -109,8 +141,33 @@ printf("Seu quadrado é %2.2f\n", pow(quadrado,2.0));
 //• V = Velocidade média
 //• L = Litros de combustível consumidos
 //Ao final, o programa deverá imprimir a distância percorrida e a quantidade de litros consumidos na viagem.
+int tempo = 0, velocidade = 0;
+printf("Digite o tempo gasto na viagem em minutos: ");
+scanf("%d",&tempo);
+printf("Digite a velocidade média (km/h): ");
+scanf("%d",&velocidade);
+float distancia = tempo/60.0*velocidade;
+printf("Distância percorrida (km): %2.1f\n", distancia);
+printf("Litros consumidos: %2.1f\n", distancia/12.0);
+
 //19. Faça um programa em C que calcule o valor de uma prestação em atraso. Para isso, o programa deve ler o valor da prestação vencida, a taxa periódica de juros e o período de atraso. Ao final, o programa deve imprimir o valor da prestação atrasada, o período de atraso, os juros que serão cobrados pelo período de atraso, o valor da prestação acrescido dos juros. Considere juros simples.
-//20. Faça um programa em C que efetue a apresentação do valor da conversão em real (R$) de umvalor lido em dólar (US$). Para isso, será necessário também ler o valor da cotação do dólar.
+float prestacao = 0.0, juros = 0.0;
+int dias_atraso = 0;
+printf("Valor da prestação: R$ ");
+scanf("%f",&prestacao);
+printf("Taxa de juros por dia: ");
+scanf("%f",&juros);
+printf("Qtde de dias atrasado: ");
+scanf("%d",&dias_atraso);
+printf("Valor com multa: R$ %2.2f\n",prestacao*(1+juros*dias_atraso/100));
+
+//20. Faça um programa em C que efetue a apresentação do valor da conversão em real (R$) de um valor lido em dólar (US$). Para isso, será necessário também ler o valor da cotação do dólar.
+float dolares = 0.0, cotacao = 0.0;
+printf("Qtde de dólares: US$ ");
+scanf("%f",&dolares);
+printf("Cotação do dólar: R$ ");
+scanf("%f",&cotacao);
+printf("US$ %2.2f = R$ %2.2f\n",dolares,dolares*cotacao);
 
     return EXIT_SUCCESS;
 }
