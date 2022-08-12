@@ -26,7 +26,7 @@ exercicioscap1:
 	@echo "|    EXERCICIOS CAP 01      |"
 	@echo "============================="
 	@echo "--- Construindo o programa ---"
-	gcc ExerciciosCap1.c -o exercicioscap1
+	gcc ExerciciosCap1.c -lm -o exercicioscap1
 	@echo "--- Habilitando variaveis para execução ---"
 	chmod +x exercicioscap1
 
