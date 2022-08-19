@@ -7,7 +7,63 @@
 
 int main() {
 
+//Exemplo de Condição SE
+
+float nota1, nota2, pf;
+printf("Digite a nota1: ");
+scanf("%f", &nota1);
+printf("Digite a nota2: ");
+scanf("%f", &nota2);
+float media = (nota1 + nota2) / 2;
+if (media >= 6) {  //Se a média for maior ou igual a 6 então
+    printf("Aprovado com média: %2.1f", media);
+} else { //senão faça
+    if (media >= 3) { //Se média for maior ou igual a 3 então faça
+        printf("Em Recuperação com média: %2.1f\n", media);
+        printf("Digite a nota da PF: ");
+        scanf("%f", &pf);
+        media = (media + pf) / 2;
+        if (media >= 5) {
+            printf("Aprovado na PF");
+        } else {
+            printf("Reprovado na PF");
+        }
+    } else { //Senão faça
+        printf("Reprovado direto com média %2.1f", media);
+    }
+}
+
+//Exemplo com SWITCH
+
+int dia_semana;
+printf("Digite o dia da semana: ");
+scanf("%d", &dia_semana);
+switch (dia_semana) { //só funciona para int, long e char
+    case 1:
+        printf("Segunda-feira");
+        break;
+    case 2:
+        printf("Terça-feira");
+        break;
+    case 3:
+        printf("Quarta-feira");
+        break;
+    default:
+        printf("Semana inexistente!")
+}
+
 //1. Faça um programa que leia dois valores numéricos inteiros e efetue a adição, caso o resultado seja maior que 10, apresentá-lo.
+int valor1, valor2;
+printf("Digite o valor1: ");
+scanf("%d", &valor1);
+printf("Digite o valor2: ");
+scanf("%d", &valor2);
+int soma = valor1 + valor2;
+if (soma > 10) {  //Se soma maior que 10 então
+    printf("Resultado: %d", soma);
+} else { //senão faça
+    printf("Resultado não apresentado por ser inferior ou igual 10");
+}
 
 //2. Faça um programa que leia dois valores inteiros e efetue a adição. Caso o valor somado seja maior que 20, este deverá ser apresentado somando-se a ele mais 8, caso o valor somado seja menor ou igual a 20, este deverá ser apresentado subtraindo-se 5.
 
