@@ -36,3 +36,8 @@ chmod +x olamundo
 ```
 
 Esses comandos devem ser executados no mesmo diretório (pasta) em que o arquivo se encontra.
+
+# Script de Execução
+Para sua comodidade existe um arquivo Makefile no projeto para facilitar o processo de construção dos programas, por meio do comando:
+
+`make all`
