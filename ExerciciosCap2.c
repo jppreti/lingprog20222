@@ -49,7 +49,7 @@ switch (dia_semana) { //só funciona para int, long e char
         printf("Quarta-feira");
         break;
     default:
-        printf("Semana inexistente!")
+        printf("Semana inexistente!");
 }
 
 //1. Faça um programa que leia dois valores numéricos inteiros e efetue a adição, caso o resultado seja maior que 10, apresentá-lo.
