@@ -24,12 +24,12 @@ if (media >= 6) {  //Se a média for maior ou igual a 6 então
         scanf("%f", &pf);
         media = (media + pf) / 2;
         if (media >= 5) {
-            printf("Aprovado na PF");
+            printf("Aprovado na PF\n");
         } else {
-            printf("Reprovado na PF");
+            printf("Reprovado na PF\n");
         }
     } else { //Senão faça
-        printf("Reprovado direto com média %2.1f", media);
+        printf("Reprovado direto com média %2.1f\n", media);
     }
 }
 
@@ -40,48 +40,96 @@ printf("Digite o dia da semana: ");
 scanf("%d", &dia_semana);
 switch (dia_semana) { //só funciona para int, long e char
     case 1:
-        printf("Segunda-feira");
+        printf("Segunda-feira\n");
         break;
     case 2:
-        printf("Terça-feira");
+        printf("Terça-feira\n");
         break;
     case 3:
-        printf("Quarta-feira");
+        printf("Quarta-feira\n");
         break;
     default:
-        printf("Semana inexistente!");
+        printf("Semana inexistente!\n");
 }
 
 //1. Faça um programa que leia dois valores numéricos inteiros e efetue a adição, caso o resultado seja maior que 10, apresentá-lo.
-int valor1, valor2;
+int valor1, valor2, soma;
 printf("Digite o valor1: ");
 scanf("%d", &valor1);
 printf("Digite o valor2: ");
 scanf("%d", &valor2);
-int soma = valor1 + valor2;
+soma = valor1 + valor2;
 if (soma > 10) {  //Se soma maior que 10 então
-    printf("Resultado: %d", soma);
-} else { //senão faça
-    printf("Resultado não apresentado por ser inferior ou igual 10");
+    printf("Resultado: %d\n", soma);
 }
 
 //2. Faça um programa que leia dois valores inteiros e efetue a adição. Caso o valor somado seja maior que 20, este deverá ser apresentado somando-se a ele mais 8, caso o valor somado seja menor ou igual a 20, este deverá ser apresentado subtraindo-se 5.
+printf("Digite o valor1: ");
+scanf("%d", &valor1);
+printf("Digite o valor2: ");
+scanf("%d", &valor2);
+soma = valor1 + valor2;
+if (soma > 20) {  
+    printf("Resultado: %d\n", soma+8);
+} else {
+    printf("Resultado: %d\n", soma-5);    
+}
 
 //3. Faça um programa que leia um número e imprima uma das duas mensagens: "É múltiplo de 3"ou "Não é múltiplo de 3".
+printf("Digite o valor: ");
+scanf("%d", &valor1);
+if (valor1 % 3 == 0) {  
+    printf("É múltiplo de 3\n");
+} else {
+    printf("Não é múltiplo de 3\n");    
+}
 
 //4. Faça um programa que leia um número e informe se ele é ou não divisível por 5.
+printf("Digite o valor: ");
+scanf("%d", &valor1);
+if (valor1 % 5 == 0) {  
+    printf("É divisível por 5\n");
+} else {
+    printf("Não é divisível por 5\n");    
+}
 
 //5. Faça um programa que leia um número e informe se ele é divisível por 3 e por 7.
+printf("Digite o valor: ");
+scanf("%d", &valor1);
+if (valor1 % 3 == 0 && valor1 % 7 == 0) {  
+    printf("É divisível por 3 e 7\n");
+}
 
-//6. A prefeitura do Rio de Janeiro abriu uma linha de crédito para os funcionários estatutários. O valor máximo da prestação não poderá ultrapassar 30% do salário bruto. Faça um programa em linguagem C que permita entrar com o salário bruto e o valor da prestação e informar se o empréstimo pode ou não ser concedido.
+//6. A prefeitura do Rio de Janeiro abriu uma linha de crédito para os funcionários
+//estatutários. O valor máximo da prestação não poderá ultrapassar 30% do salário
+//bruto. Faça um programa em linguagem C que permita entrar com o salário bruto e o
+//valor da prestação e informar se o empréstimo pode ou não ser concedido.
+float salario_bruto = 0;
+float valor_prestacao = 0;
+float valor_maximo_prestacao = 0;
+printf("Digite o salário bruto: ");
+scanf("%f", &salario_bruto);
+printf("Digite o valor da prestação: ");
+scanf("%f", &valor_prestacao);
+valor_maximo_prestacao = salario_bruto * 0.3;
+if (valor_prestacao > valor_maximo_prestacao) {
+    printf("Empréstimo NÃO pode ser concedido.\n");
+} else {
+    printf("Empréstimo pode ser concedido.\n");
+}
 
-//7. Faça um programa que leia um número e indique se o número está compreendido entre 20 e 50 ou não.
+//7. Faça um programa que leia um número e indique se o número está compreendido
+//entre 20 e 50 ou não.
 
-//8. Faça um programa que leia um número e imprima uma das mensagens: "Maior do que 20", "Igual a 20"ou "Menor do que 20".
+//8. Faça um programa que leia um número e imprima uma das mensagens: 
+//"Maior do que 20", "Igual a 20"ou "Menor do que 20".
 
-//9. Faça um programa que permita entrar com o ano de nascimento da pessoa e como ano atual. O programa deve imprimir a idade da pessoa. Não se esqueça de verificar se o ano de nascimento informado é válido.
+//9. Faça um programa que permita entrar com o ano de nascimento da pessoa e como ano
+//atual. O programa deve imprimir a idade da pessoa. Não se esqueça de verificar se o
+//ano de nascimento informado é válido.
 
-//10. Faça um programa que leia três números inteiros e imprima os três em ordem crescente.
+//10. Faça um programa que leia três números inteiros e imprima os três em ordem
+//crescente.
 
 //11. Faça um programa que leia 3 números e imprima o maior deles.
 
@@ -90,18 +138,22 @@ if (soma > 10) {  //Se soma maior que 10 então
 //• Se é menor de idade
 //• Se é maior de 65 anos
 
-//13. Faça um programa que permita entrar com o nome, a nota da prova 1 e a nota da prova 2 de umaluno. O programa deve imprimir o nome, a nota da prova 1, a nota da prova 2, a média das notas e uma das mensagens: "Aprovado", "Reprovado"ou "em Prova Final"(a média é 7 para aprovação, menor que 3 para reprovação e as demais em prova final).
+//13. Faça um programa que permita entrar com o nome, a nota da prova 1 e a nota da
+//prova 2 de umaluno. O programa deve imprimir o nome, a nota da prova 1, a nota da prova 2, a média das notas e uma das mensagens: "Aprovado", "Reprovado"ou "em Prova Final"(a média é 7 para aprovação, menor que 3 para reprovação e as demais em prova final).
 
-//14. Faça um programa que permita entrar com o salário de uma pessoa e imprima o desconto do INSS segundo a tabela seguir:
+//14. Faça um programa que permita entrar com o salário de uma pessoa e imprima o
+//desconto do INSS segundo a tabela seguir:
 //Salário Faixa de Desconto
 //Menor ou igual à R$600,00 Isento
 //Maior que R$600,00 e menor ou igual a R$1200,00 20%
 //Maior que R$1200,00 e menor ou igual a R$2000,00 25%
 //Maior que R$2000,00 30%
 
-//15. Um comerciante comprou umproduto e quer vendê-lo com umlucro de 45% se o valor da compra for menor que R$20,00, caso contrário, o lucro será de 30%. Faça um programa que leia o valor do produto e imprima o valor da venda.
+//15. Um comerciante comprou umproduto e quer vendê-lo com umlucro de 45% se o valor
+//da compra for menor que R$20,00, caso contrário, o lucro será de 30%. Faça um programa que leia o valor do produto e imprima o valor da venda.
 
-//16. A confederação brasileira de natação irá promover eliminatórias para o próximo mundial. Faça um programa que receba a idade de um nadador e imprima a sua categoria segundo a tabela a seguir:
+//16. A confederação brasileira de natação irá promover eliminatórias para o próximo
+//mundial. Faça um programa que receba a idade de um nadador e imprima a sua categoria segundo a tabela a seguir:
 //Categoria Idade
 //Infantil A 5 - 7 anos
 //Infantil B 8 - 10 anos
