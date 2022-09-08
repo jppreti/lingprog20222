@@ -1,4 +1,4 @@
-all: clear olamundo variaveis exercicioscap1 exercicioscap2 exercicioscap3
+all: clear olamundo variaveis exercicioscap1 exercicioscap2 exercicioscap3 exercicioscap4
 
 olamundo:
 	@echo
@@ -50,9 +50,18 @@ exercicioscap3:
 	@echo "--- Habilitando variaveis para execução ---"
 	chmod +x exercicioscap3
 
+exercicioscap4:
+	@echo
+	@echo "============================="
+	@echo "|    EXERCICIOS CAP 04      |"
+	@echo "============================="
+	@echo "--- Construindo o programa ---"
+	gcc ExerciciosCap4.c -lm -o exercicioscap4
+	@echo "--- Habilitando variaveis para execução ---"
+	chmod +x exercicioscap4
 clear:
 	@echo
 	@echo "============================="
 	@echo "|APAGANDO TODOS OS PROGRAMAS|"
 	@echo "============================="
-	rm -f olamundo variaveis exercicioscap1 exercicioscap2 exercicioscap3
+	rm -f olamundo variaveis exercicioscap1 exercicioscap2 exercicioscap3 exercicioscap4
