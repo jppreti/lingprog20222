@@ -8,6 +8,22 @@
 int main() {
 
 //1. Faça um programa em C que imprima todos os números de 1 até 100.
+//valor inicial, condição de execução, incremento
+for (int i = 1; i <= 100; i++) {
+    printf("%d ", i);
+} 
+printf("\n\n");
+int i = 1;
+while (i <= 100) {
+    printf("%d ", i);
+    i++;
+}
+printf("\n\n");
+i = 1;
+do {
+    printf("%d ", i);
+    i++;
+} while(i <= 100);
 
 //2. Faça um programa que imprima todos os números pares de 100 até 1.
 
