@@ -33,21 +33,54 @@ do {
 //pessoas.Oprograma deve imprimir o nome da pessoa se ela for do sexomasculino
 //e tiver mais de 21 anos.
 
+char nome[50], genero;
+int idade;
+
+for (int i=0; i<20; i++) {
+    printf("Nome: ");
+    scanf(" %50[^\n]", nome);
+    printf("Gênero: ");
+    scanf(" %c", &genero); //ou genero = getchar();
+    printf("Idade: ");
+    scanf(" %d", &idade);
+    if (idade == 0) break;
+    if ((genero == 'M' || genero == 'm') && idade > 21)
+        printf("%s\n", nome);
+}
+
 //5. Sabendo-se que a unidade lógica e aritmética calcula o produto através de somas
 //sucessivas, crie um programa que calcule o produto de dois números inteiros
 //lidos. Suponha que os números lidos sejam positivos e que o multiplicando seja
 //menor do que o multiplicador.
+int multiplicando, multiplicador;
+int resultado = 0;
+printf("Multiplicando: ");
+scanf(" %d", &multiplicando);
+printf("Multiplicador: ");
+scanf(" %d", &multiplicador);
+for (int i = 1; i <= multiplicador; i++)
+    resultado += multiplicando;
+printf("%d * %d = %d\n", multiplicando, multiplicador, resultado);
 
 //6. Crie um programa em C que imprima os 20 primeiros termos da série de Fibonacci.
 //Observação: os dois primeiros termos desta série são 1 e 1 e os demais são gerados
 //a partir da soma dos anteriores. Exemplo:
 //• 1 + 1 = 2, terceiro termo;
 //• 1 + 2 = 3, quarto termo, etc.
+int anterior=1, proximo=1;
+printf("%d ", anterior);
+for (int i = 0; i < 19; i++) {
+    printf("%d ", proximo);
+    int novo_anterior = proximo;
+    proximo = anterior + proximo;
+    anterior = novo_anterior;
+}
 
 //7. Crie um programa emlinguagem C que permita entrar com o nome, a nota da
 //prova 1 e da prova 2 de 15 alunos. Ao final, imprimir uma listagem, contendo:
 //nome, nota da prova 1, nota da prova 2, emédia das notas de cada aluno. Ao final,
 //imprimir a média geral da turma.
+
 
 //8. Faça umprograma que permita entrar com o nome e o salário bruto de 10 pessoas.
 //Após ler os dados, imprimir o nome e o valor da alíquota do imposto de renda
