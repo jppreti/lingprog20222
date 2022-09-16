@@ -6,7 +6,7 @@
 #include <stdlib.h>
 
 int main() {
-
+/*
 //1. Faça um programa em C que imprima todos os números de 1 até 100.
 //valor inicial, condição de execução, incremento
 for (int i = 1; i <= 100; i++) {
@@ -33,7 +33,7 @@ do {
 //pessoas.Oprograma deve imprimir o nome da pessoa se ela for do sexomasculino
 //e tiver mais de 21 anos.
 
-char nome[50], genero;
+char nome[30], genero;
 int idade;
 
 for (int i=0; i<20; i++) {
@@ -75,11 +75,28 @@ for (int i = 0; i < 19; i++) {
     proximo = anterior + proximo;
     anterior = novo_anterior;
 }
-
+*/
 //7. Crie um programa emlinguagem C que permita entrar com o nome, a nota da
 //prova 1 e da prova 2 de 15 alunos. Ao final, imprimir uma listagem, contendo:
 //nome, nota da prova 1, nota da prova 2, emédia das notas de cada aluno. Ao final,
 //imprimir a média geral da turma.
+char nome[30];
+char lista[4000];
+float nota1, nota2, media, media_geral=0;
+sprintf(lista, "NOME\tN1\tN2\tMEDIA");
+for (int i = 0; i < 3; i++) {
+    printf("Nome: ");
+    scanf(" %50[^\n]", nome);
+    printf("Nota 1: ");
+    scanf(" %f", &nota1);
+    printf("Nota 2: ");
+    scanf(" %f", &nota2);
+    media = (nota1 + nota2) / 2;
+    sprintf(lista, "%s\n%s\t%.1f\t%.1f\t%.1f", lista,nome,nota1,nota2,media);
+    media_geral += media;
+}
+printf("%s\n\n", lista);
+printf("Média da Turma: %.1f\n", media_geral/3);
 
 
 //8. Faça umprograma que permita entrar com o nome e o salário bruto de 10 pessoas.
