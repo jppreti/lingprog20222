@@ -89,7 +89,7 @@ sprintf(lista, "NOME\tN1\tN2\tMEDIA");
 int i = 0;
 for (i = 0; i < 15; i++) {
     printf("Nome: ");
-    if (scanf(" %50[^\n]", nome) != true) printf("Falha ao ler o nome!");
+    if (scanf(" %30[^\n]", nome) != true) printf("Falha ao ler o nome!");
     if (strcmp(nome,"sair")==0) break; //strcmp é função de string.h
     printf("Nota 1: ");
     if (scanf(" %f", &nota1) != true) printf("Falha ao ler a nota!");
