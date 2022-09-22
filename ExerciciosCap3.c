@@ -100,7 +100,7 @@ for (i = 0; i < 15; i++) {
     media_geral += media;
 }
 printf("%s\n\n", lista);
-printf("Média da Turma: %.1f\n", media_geral/i);
+printf("Média da Turma: %.1f\n", media_geral/(i+1));
 
 
 //8. Faça umprograma que permita entrar com o nome e o salário bruto de 10 pessoas.
