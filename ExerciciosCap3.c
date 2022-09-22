@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main() {
 /*
@@ -84,9 +85,10 @@ char nome[30];
 char lista[4000];
 float nota1, nota2, media, media_geral=0;
 sprintf(lista, "NOME\tN1\tN2\tMEDIA");
-for (int i = 0; i < 3; i++) {
+for (int i = 0; i < 15; i++) {
     printf("Nome: ");
     scanf(" %50[^\n]", nome);
+    if (strcmp(nome,"sair")==0) break; //strcmp é função de string.h
     printf("Nota 1: ");
     scanf(" %f", &nota1);
     printf("Nota 2: ");
