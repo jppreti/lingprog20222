@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
 int main() {
 /*
@@ -87,12 +88,12 @@ float nota1, nota2, media, media_geral=0;
 sprintf(lista, "NOME\tN1\tN2\tMEDIA");
 for (int i = 0; i < 15; i++) {
     printf("Nome: ");
-    scanf(" %50[^\n]", nome);
+    if (scanf(" %50[^\n]", nome) != true) printf("Falha ao ler o nome!");
     if (strcmp(nome,"sair")==0) break; //strcmp é função de string.h
     printf("Nota 1: ");
-    scanf(" %f", &nota1);
+    if (scanf(" %f", &nota1) != true) printf("Falha ao ler a nota!");
     printf("Nota 2: ");
-    scanf(" %f", &nota2);
+    if (scanf(" %f", &nota2) != true) printf("Falha ao ler a nota!");
     media = (nota1 + nota2) / 2;
     sprintf(lista, "%s\n%s\t%.1f\t%.1f\t%.1f", lista,nome,nota1,nota2,media);
     media_geral += media;
