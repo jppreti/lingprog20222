@@ -86,7 +86,8 @@ char nome[30];
 char lista[4000];
 float nota1, nota2, media, media_geral=0;
 sprintf(lista, "NOME\tN1\tN2\tMEDIA");
-for (int i = 0; i < 15; i++) {
+int i = 0;
+for (i = 0; i < 15; i++) {
     printf("Nome: ");
     if (scanf(" %50[^\n]", nome) != true) printf("Falha ao ler o nome!");
     if (strcmp(nome,"sair")==0) break; //strcmp é função de string.h
@@ -99,7 +100,7 @@ for (int i = 0; i < 15; i++) {
     media_geral += media;
 }
 printf("%s\n\n", lista);
-printf("Média da Turma: %.1f\n", media_geral/3);
+printf("Média da Turma: %.1f\n", media_geral/i);
 
 
 //8. Faça umprograma que permita entrar com o nome e o salário bruto de 10 pessoas.
