@@ -1,5 +1,5 @@
 /*
-    PROVA PRÁTICA DE PYTHON
+    PROVA PRÁTICA DE C
     Ao término enviar e-mail conforme modelo:
     Para:       preti.joao@ifmt.edu.br
     Assunto:    Prova 1 de Linguagem de Programação 2022/2
