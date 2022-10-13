@@ -6,12 +6,52 @@
 #include <stdlib.h>
 
 int main() {
-
+    //CARGA DA MATRIZ
+    int matriz[3][2];
+    for (int c = 0; c < 3; c++) {
+        for (int l = 0; l < 2; l++) {
+            matriz[c][l] = c+l;
+        }
+    }
+    //IMPRESSAO DA MATRIZ
+    for (int c = 0; c < 3; c++) {
+        for (int l = 0; l < 2; l++) {
+            printf("%d ", matriz[c][l]);
+        }
+        printf("\n");
+    }    
+/*    
+    char nome[10][40];
+    for (int i)
+    scanf("%s[40^\n]", &nome[9]);*/
     //1. Faça umprograma em C que armazene 15 números inteiros em umvetor e depois
     //permita que o usuário digite um número inteiro para ser buscado no vetor, se
     //for encontrado o programa deve imprimir a posição desse número no vetor, caso
     //contrário, deve imprimir a mensagem: "Nao encontrado!".
-
+    /*
+    int max = 0;
+    printf("Digite a qtde de números: ");
+    scanf("%d", &max);
+    int numeros[max];
+    for (int i = 0; i < max; i++) {
+        scanf("%d",&numeros[i]);
+    }
+    int valor_busca = 0;
+    printf("Digite o valor a ser pesquisado: ");
+    scanf("%d", &valor_busca);
+    int posicao_encontrada = -1;
+    for (int i = 0; i < max; i++) {
+        if (numeros[i] == valor_busca) {
+            posicao_encontrada = i;
+            break;
+        }
+    }
+    if (posicao_encontrada == -1) {
+        printf("Valor não existe no vetor");
+    } else {
+        printf("Valor encontrado na posição %d", posicao_encontrada+1);
+    }
+    */
     //2. Faça umprograma que armazene 10 letras em umvetor e imprima uma listagem
     //numerada.
 
@@ -29,7 +69,7 @@ int main() {
 
     //6. Construa um programa que permita armazenar o salário de 20 pessoas. Calcular
     //e armazenar o novo salário sabendo-se que o reajuste foi de 8%. Imprimir uma
-    //listagemnumerada com o salário e o novo salário. Declare quantos vetores forem
+    //li]stagemnumerada com o salário e o novo salário. Declare quantos vetores forem
     //necessários.
 
     //7. Crie umprograma que leia o preço de compra e o preço de venda de 100mercadorias
