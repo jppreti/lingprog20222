@@ -20,15 +20,22 @@ int main() {
         }
         printf("\n");
     }    
-/*    
-    char nome[10][40];
-    for (int i)
-    scanf("%s[40^\n]", &nome[9]);*/
+    
+    //EXEMPLO DE VETOR DE NOMES
+    char nome[3][40];
+    for (int i = 0; i < 3; i ++) {
+        printf("Digite o %d nome: ", (i+1));
+        scanf("%s", &nome[i]);
+    }
+    printf("\n\nNOMES CADASTRADOS\n");
+    for (int i = 0; i < 3; i ++) {
+        printf("Nome %d: %s\n", (i+1), nome[i]);
+    }
     //1. Faça umprograma em C que armazene 15 números inteiros em umvetor e depois
     //permita que o usuário digite um número inteiro para ser buscado no vetor, se
     //for encontrado o programa deve imprimir a posição desse número no vetor, caso
     //contrário, deve imprimir a mensagem: "Nao encontrado!".
-    /*
+    
     int max = 0;
     printf("Digite a qtde de números: ");
     scanf("%d", &max);
@@ -51,7 +58,7 @@ int main() {
     } else {
         printf("Valor encontrado na posição %d", posicao_encontrada+1);
     }
-    */
+    
     //2. Faça umprograma que armazene 10 letras em umvetor e imprima uma listagem
     //numerada.
 
