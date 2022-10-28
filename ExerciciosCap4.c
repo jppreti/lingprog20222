@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 int main() {
     //CARGA DA MATRIZ
@@ -59,11 +60,32 @@ int main() {
         printf("Valor encontrado na posição %d", posicao_encontrada+1);
     }
     
-    //2. Faça umprograma que armazene 10 letras em umvetor e imprima uma listagem
+    //2. Faça umprograma que armazene 10 letras em um vetor e imprima uma listagem
     //numerada.
+    char letras[10];
+    for (int pos = 0; pos < 10; pos++){
+        scanf("%c", &letras[pos]);
+    }
+
+    for (int pos = 0; pos < 10; pos++) {
+        printf("%d: %c\n", pos+1, letras[pos]);
+    }
 
     //3. Construa uma programa em C que armazene 15 números em um vetor e imprima
     //uma listagem numerada contendo o número e uma das mensagens: par ou ímpar.
+    srand((unsigned)time(NULL)); //muda a semente para que os números aleatórios variem de acordo com o horário
+    int numeros[15];
+    for (int pos = 0; pos < 15; pos++){
+        numeros[pos] = rand() % 101;
+    }
+    for (int pos = 0; pos < 15; pos++) {
+        printf("%d: %d\t", pos+1, numeros[pos]);
+        if (numeros[pos] % 2 == 0) {
+            printf("PAR\n");
+        } else {
+            printf("IMPAR\n");
+        }
+    }
 
     //4. Faça um programa que armazene 8 números em um vetor e imprima todos os
     //números. Ao final, imprima o total de números múltiplos de seis.
