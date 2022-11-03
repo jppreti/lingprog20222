@@ -5,8 +5,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 
-int main() {
+void exemploMatriz() {
     //CARGA DA MATRIZ
     int matriz[3][2];
     for (int c = 0; c < 3; c++) {
@@ -31,12 +32,10 @@ int main() {
     printf("\n\nNOMES CADASTRADOS\n");
     for (int i = 0; i < 3; i ++) {
         printf("Nome %d: %s\n", (i+1), nome[i]);
-    }
-    //1. Faça umprograma em C que armazene 15 números inteiros em umvetor e depois
-    //permita que o usuário digite um número inteiro para ser buscado no vetor, se
-    //for encontrado o programa deve imprimir a posição desse número no vetor, caso
-    //contrário, deve imprimir a mensagem: "Nao encontrado!".
-    
+    }    
+}
+
+void solucao01() {
     int max = 0;
     printf("Digite a qtde de números: ");
     scanf("%d", &max);
@@ -59,6 +58,48 @@ int main() {
     } else {
         printf("Valor encontrado na posição %d", posicao_encontrada+1);
     }
+
+}
+
+int soma(int a, int b) {
+    return a+b;
+}
+
+int menu(char opcoes[5][30],int qtdeOpcoes) {
+    printf("\n");
+    for (int cont = 0; cont < qtdeOpcoes; cont++) {
+        printf("[%d]: %s\n", cont, opcoes[cont]);
+    }
+    printf("Digite a opcao desejada: ");
+    int opcao;
+    scanf("%d",&opcao);
+    return opcao;
+}
+
+int main() {
+    char opcoes[5][30];
+    strcpy(&opcoes[0], "Op1");
+    strcpy(&opcoes[1], "Op2");
+    strcpy(&opcoes[2], "Op3");
+    strcpy(&opcoes[3], "Op4");
+    strcpy(&opcoes[4], "Op5");
+    int selecionado = menu(opcoes,5);
+    printf("Foi selecionada a opcao: %d", selecionado);
+
+    char opcoes2[3][30];
+    strcpy(&opcoes2[0], "Operacao1");
+    strcpy(&opcoes2[1], "Operacao2");
+    strcpy(&opcoes2[2], "Operacao3");
+    selecionado = menu(opcoes2,3);
+    printf("Foi selecionada a opcao: %d", selecionado);
+
+    exemploMatriz();
+    printf("%d", soma(2,3));
+    //1. Faça umprograma em C que armazene 15 números inteiros em umvetor e depois
+    //permita que o usuário digite um número inteiro para ser buscado no vetor, se
+    //for encontrado o programa deve imprimir a posição desse número no vetor, caso
+    //contrário, deve imprimir a mensagem: "Nao encontrado!".
+    solucao01();
     
     //2. Faça umprograma que armazene 10 letras em um vetor e imprima uma listagem
     //numerada.
@@ -74,13 +115,13 @@ int main() {
     //3. Construa uma programa em C que armazene 15 números em um vetor e imprima
     //uma listagem numerada contendo o número e uma das mensagens: par ou ímpar.
     srand((unsigned)time(NULL)); //muda a semente para que os números aleatórios variem de acordo com o horário
-    int numeros[15];
+    int numbers[15];
     for (int pos = 0; pos < 15; pos++){
-        numeros[pos] = rand() % 101;
+        numbers[pos] = rand() % 101;
     }
     for (int pos = 0; pos < 15; pos++) {
-        printf("%d: %d\t", pos+1, numeros[pos]);
-        if (numeros[pos] % 2 == 0) {
+        printf("%d: %d\t", pos+1, numbers[pos]);
+        if (numbers[pos] % 2 == 0) {
             printf("PAR\n");
         } else {
             printf("IMPAR\n");
