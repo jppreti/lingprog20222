@@ -36,6 +36,10 @@ void exemploMatriz() {
 }
 
 void solucao01() {
+    printf("\n==========================================\n");
+    printf("==============EXERCICIO 01================\n");
+    printf("==========================================\n");
+
     int max = 0;
     printf("Digite a qtde de números: ");
     scanf("%d", &max);
@@ -76,14 +80,7 @@ int menu(char opcoes[5][30],int qtdeOpcoes) {
     return opcao;
 }
 
-void popularVetor(int numeros[], int qtde, int valorMaximo) {
-    srand((unsigned)time(NULL)); //muda a semente para que os números aleatórios variem de acordo com o horário
-    for (int pos = 0; pos < qtde; pos++){
-        numeros[pos] = rand() % (valorMaximo+1);
-    }    
-}
-
-int main() {
+void exemplosMenus() {
     char opcoes[5][30];
     strcpy(&opcoes[0], "Op1");
     strcpy(&opcoes[1], "Op2");
@@ -99,17 +96,20 @@ int main() {
     strcpy(&opcoes2[2], "Operacao3");
     selecionado = menu(opcoes2,3);
     printf("Foi selecionada a opcao: %d\n", selecionado);
+}
 
-    exemploMatriz();
-    printf("%d", soma(2,3));
-    //1. Faça umprograma em C que armazene 15 números inteiros em umvetor e depois
-    //permita que o usuário digite um número inteiro para ser buscado no vetor, se
-    //for encontrado o programa deve imprimir a posição desse número no vetor, caso
-    //contrário, deve imprimir a mensagem: "Nao encontrado!".
-    solucao01();
-    
-    //2. Faça umprograma que armazene 10 letras em um vetor e imprima uma listagem
-    //numerada.
+void popularVetor(int numeros[], int qtde, int valorMaximo) {
+    srand((unsigned)time(NULL)); //muda a semente para que os números aleatórios variem de acordo com o horário
+    for (int pos = 0; pos < qtde; pos++){
+        numeros[pos] = rand() % (valorMaximo+1);
+    }    
+}
+
+void solucao02() {
+    printf("\n==========================================\n");
+    printf("==============EXERCICIO 02================\n");
+    printf("==========================================\n");
+
     char letras[10];
     for (int pos = 0; pos < 10; pos++){
         scanf("%c", &letras[pos]);
@@ -118,9 +118,13 @@ int main() {
     for (int pos = 0; pos < 10; pos++) {
         printf("%d: %c\n", pos+1, letras[pos]);
     }
+}
 
-    //3. Construa uma programa em C que armazene 15 números em um vetor e imprima
-    //uma listagem numerada contendo o número e uma das mensagens: par ou ímpar.
+void solucao03() {
+    printf("\n==========================================\n");
+    printf("==============EXERCICIO 03================\n");
+    printf("==========================================\n");
+
     int numbers[15];
     popularVetor(numbers,15,100);
 
@@ -132,6 +136,28 @@ int main() {
             printf("IMPAR\n");
         }
     }
+}
+
+int main() {
+    exemploMatriz();
+
+    printf("%d\n", soma(2,3));
+
+    exemplosMenus();
+
+    //1. Faça umprograma em C que armazene 15 números inteiros em umvetor e depois
+    //permita que o usuário digite um número inteiro para ser buscado no vetor, se
+    //for encontrado o programa deve imprimir a posição desse número no vetor, caso
+    //contrário, deve imprimir a mensagem: "Nao encontrado!".
+    solucao01();
+    
+    //2. Faça umprograma que armazene 10 letras em um vetor e imprima uma listagem
+    //numerada.
+    solucao02();
+
+    //3. Construa uma programa em C que armazene 15 números em um vetor e imprima
+    //uma listagem numerada contendo o número e uma das mensagens: par ou ímpar.
+    solucao03();
 
     //4. Faça um programa que armazene 8 números em um vetor e imprima todos os
     //números. Ao final, imprima o total de números múltiplos de seis.
