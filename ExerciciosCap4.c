@@ -76,6 +76,13 @@ int menu(char opcoes[5][30],int qtdeOpcoes) {
     return opcao;
 }
 
+void popularVetor(int numeros[], int qtde, int valorMaximo) {
+    srand((unsigned)time(NULL)); //muda a semente para que os números aleatórios variem de acordo com o horário
+    for (int pos = 0; pos < qtde; pos++){
+        numeros[pos] = rand() % (valorMaximo+1);
+    }    
+}
+
 int main() {
     char opcoes[5][30];
     strcpy(&opcoes[0], "Op1");
@@ -84,14 +91,14 @@ int main() {
     strcpy(&opcoes[3], "Op4");
     strcpy(&opcoes[4], "Op5");
     int selecionado = menu(opcoes,5);
-    printf("Foi selecionada a opcao: %d", selecionado);
+    printf("Foi selecionada a opcao: %d\n", selecionado);
 
     char opcoes2[3][30];
     strcpy(&opcoes2[0], "Operacao1");
     strcpy(&opcoes2[1], "Operacao2");
     strcpy(&opcoes2[2], "Operacao3");
     selecionado = menu(opcoes2,3);
-    printf("Foi selecionada a opcao: %d", selecionado);
+    printf("Foi selecionada a opcao: %d\n", selecionado);
 
     exemploMatriz();
     printf("%d", soma(2,3));
@@ -114,11 +121,9 @@ int main() {
 
     //3. Construa uma programa em C que armazene 15 números em um vetor e imprima
     //uma listagem numerada contendo o número e uma das mensagens: par ou ímpar.
-    srand((unsigned)time(NULL)); //muda a semente para que os números aleatórios variem de acordo com o horário
     int numbers[15];
-    for (int pos = 0; pos < 15; pos++){
-        numbers[pos] = rand() % 101;
-    }
+    popularVetor(numbers,15,100);
+
     for (int pos = 0; pos < 15; pos++) {
         printf("%d: %d\t", pos+1, numbers[pos]);
         if (numbers[pos] % 2 == 0) {
